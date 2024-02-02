@@ -16,15 +16,15 @@ class BooksController
     # Ask for price
     # Ask for author
     # Ask for category
-    title = @view.ask_for("title")
-    price = @view.ask_for("price").to_i
-    author = @view.ask_for("author")
-    category = @view.ask_for("category")
-
     # Active Record
     # Create a new book
     # Save a new book
-    book = Book.new(title: title, price: price, author: author, category: category)
+    book = Book.new(
+      title: @view.ask_for('title'),
+      price: @view.ask_for('price').to_i,
+      author: @view.ask_for('author'),
+      category: @view.ask_for('category')
+    )
     book.save
   end
 
@@ -41,16 +41,11 @@ class BooksController
     # Ask for price
     # Ask for author
     # Ask for category
-    new_title = @view.ask_for("title")
-    new_price = @view.ask_for("price").to_i
-    new_author = @view.ask_for("author")
-    new_category = @view.ask_for("category")
-
     # Edit the data
-    book.title = new_title
-    book.price = new_price
-    book.author = new_author
-    book.category = new_category
+    book.title    =   @view.ask_for('title')
+    book.price    =   @view.ask_for('price').to_i
+    book.author   =   @view.ask_for('author')
+    book.category =   @view.ask_for('category')
 
     # Save the new witrh new data
     book.save
