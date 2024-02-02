@@ -15,13 +15,14 @@ class Router
   end
 
   def display_action
-    puts "What do you want to do?"
-    puts "1 - List all the books"
-    puts "2 - Add a new book"
-    puts "3 - Edit a book"
-    puts "4 - Delete a book"
-    puts "5 - Mark as rent"
-    puts "6 - Exit"
+    puts
+    puts 'What do you want to do?'
+    puts '1 - List all the books'
+    puts '2 - Add a new book'
+    puts '3 - Edit a book'
+    puts '4 - Delete a book'
+    puts '5 - Mark as rent'
+    puts '6 - Exit'
   end
 
   def route_action(action)
@@ -33,7 +34,7 @@ class Router
     when 5 then @books_controller.mark_as_rent
     when 6 then @running = false
     else
-      puts "Wrong answer"
+      puts 'Wrong answer'
     end
   end
 end
